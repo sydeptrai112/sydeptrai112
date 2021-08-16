@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\DoAn\PublishDoAn</_PublishTargetUrl>
+    <History>False|2021-07-18T11:46:13.3351791Z;False|2021-07-18T18:45:58.8573017+07:00;False|2021-07-18T18:45:28.1700498+07:00;False|2021-07-18T18:44:12.2247797+07:00;</History>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<DoAn.Models.SanPham>
+@helper Truncate(string s, int length)
+{
+    if (s.Length < length)
+    {
+        @s
+    }
+    else
+    {
+        @s.Substring(0, length) <text>...</text>
+    }
+
+
+}
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            Mã sản phẩm
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Đơn giá
+        </th>
+        <th>
+            Ngày cập nhật
+        </th>
+
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Hình ảnh
+        </th>
+        <th>
+            Số lượng tồn
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.FormatValue(item.DonGia, "{0:#,##0}")VNĐ
+            </td>
+            <td>
+                @Html.FormatValue(item.NgayCapNhat, "{0:dd/MM/yyyy}")
+            </td>
+
+            <td>
+                @Html.Raw(Truncate(item.MoTa, 70).ToString())
+            </td>
+            <td>
+                <img src="~/HinhAnhDoAn/@item.HinhAnh" style="width:80px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuongTon)
+            </td>
+
+        </tr>
+    }
+
+</table>
